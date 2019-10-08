@@ -6,10 +6,13 @@
 body {
     font-family: Arial, serif;
     background-color: lightgray;
+    display: flex;
+    align-content: center;
 }
 
 .überTitel {
-    margin-left: 20px;
+    display: flex;
+    align-content: center;
 }
 
 input {
