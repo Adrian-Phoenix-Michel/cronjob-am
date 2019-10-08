@@ -1,0 +1,122 @@
+
+
+
+/* All Random */
+
+body {
+    font-family: Arial, serif;
+    background-color: lightgray;
+}
+
+.überTitel {
+    margin-left: 20px;
+}
+
+input {
+    background-color: #e5e5e5;
+}
+
+input:hover {
+    background-color: #c4c4c4;
+}
+
+input:focus {
+    background-color: #fafafa;
+}
+
+select {
+    background-color: #e5e5e5;
+}
+
+select:hover {
+    background-color: #c4c4c4;
+}
+
+select:focus {
+    background-color: #fafafa;
+}
+
+.benutzerName {
+    border: black solid 1px;
+    border-radius: 40px;
+}
+
+.passWort {
+    border: black solid 1px;
+    border-radius: 40px;
+}
+
+.Titel {
+    border: black solid 1px;
+    margin-left: 40px;
+    border-radius: 40px;
+}
+
+.Adresse {
+    border: black solid 1px;
+    margin-left: 11px;
+    margin-top: 5px;
+    border-radius: 40px
+}
+
+.Titel:hover {
+    margin-left: 40px;
+    border-radius: 40px;
+}
+
+.Adresse:hover {
+    margin-left: 11px;
+    border-radius: 40px
+}
+
+.Titel:focus {
+    margin-left: 40px;
+    border-radius: 40px;
+}
+
+.Adresse:focus {
+    margin-left: 11px;
+    border-radius: 40px
+}
+
+.UIconP {
+    font-weight: bold;
+    margin-bottom: -2px;
+}
+
+.Untertitel {
+    font-weight: bold;
+}
+
+h1 {
+    
+}
+
+.Checkboxing {
+    display: inline-block;
+}
+
+.Boxing {
+    border: 2px solid darkslategrey;
+    padding-left: 15px;
+    padding-bottom: 15px;
+    margin: 15px 5px;
+}
+
+.ulParagraph {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.ulParagraph li p {
+    display: inline-block;
+    margin-right: 70px;
+    margin-bottom: 5px;
+}
+
+.Submit {
+    font-weight: bold;
+    margin-left: 10px;
+}
