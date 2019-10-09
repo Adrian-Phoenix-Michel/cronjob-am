@@ -377,7 +377,7 @@ body, html {
     max-width: 450px;
 }
 
-.überTitelLogin {
+.überTitel {
 
 }
 
@@ -445,7 +445,7 @@ select:active {
 
 .Titel {
     border: black solid 1px;
-    margin-left: 40px;
+    margin-left: 78px;
     border-radius: 40px;
     transition: all .1s ease-in-out;
 }
@@ -467,7 +467,7 @@ select:active {
 }
 
 .Titel:hover {
-    margin-left: 40px;
+    margin-left: 78px;
     border-radius: 40px;
 }
 
@@ -477,7 +477,7 @@ select:active {
 }
 
 .Titel:focus {
-    margin-left: 40px;
+    margin-left: 78px;
     border-radius: 40px;
 }
 

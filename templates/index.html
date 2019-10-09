@@ -38,28 +38,30 @@
 
     <div class="align">
 
-    Hi {{ user.username }}!
+    Welcome {{ user.username }}!
+    <br>
+    <p><a href="{% url 'password_reset' %}">change password</a></p>
 
-    <h1 class="überTitel">Cron-Job erstellen</h1>
+    <h1 class="überTitel">Create a Cron-Job</h1>
 
     <!-- Boxen -->
 
     <form action="{% url 'submit' %}" method="post">
         {% csrf_token %}
         <div id="alignCenter" class="Boxing">
-        <p class="Untertitel">Titel, Adresse</p>
-            Titel: <input type="text" name="Titel" class="Titel" required> <br>
-            Adresse: <input type="url" name="Adresse" value="https://" class="Adresse" required>
+        <p class="Untertitel">Title, Web-Address</p>
+            Title: <input type="text" name="Titel" class="Titel" required> <br>
+            Web-Address: <input type="url" name="Adresse" value="https://" class="Adresse" required>
         </div>
 
         <div id="alignCenter" class="Boxing">
-            <p class="UIconP"><input type="checkbox" name="UIcon" class="UIcon" id="myCheck" onclick="myFunction()"> Erfordert HTTP-Authentifizierung </p>
+            <p class="UIconP"><input type="checkbox" name="UIcon" class="UIcon" id="myCheck" onclick="myFunction()"> Requires HTTPS-Authentication </p>
             <div id="text" style="display:none">
                 <ul class="ulParagraph">
                   <li>
                     <div class="lineParagraph">
-                        <p>Benutzername:</p>
-                        <p>Passwort:</p>
+                        <p>Username:</p>
+                        <p>Password:</p>
                     </div>
                   </li>
                 </ul>
@@ -69,36 +71,36 @@
         </div>
 
         <div id="alignCenter" class="Boxing">
-        <p class="Untertitel">Ausführung</p>
-            <input class="Input" type="radio" name="Ausführung" value="Alle 'Zahl' Minute(n)" required> Alle <select>
+        <p class="Untertitel">Execution</p>
+            <input class="Input" type="radio" name="Ausführung" value="Alle 'Zahl' Minute(n)" required> Every <select>
                     <option value="-">-</option>
                     <option value="5">5</option>
                     <option value="10">10</option>
                     <option value="15">15</option>
                     <option value="30">30</option>
                     <option value="60">60</option>
-                </select> Minute(n) <br>
-            <input id="Input" type="radio" name="Ausführung" value="Jeden Tag um 'Zahl':'Zahl'" required> Jeden Tag um <input type="time" name="Zeit"> <br>
-            <input id="Input" type="radio" name="Ausführung" value="Immer am 'Stelle/Zahl' des Monats um 'Zahl':'Zahl'" required> Immer am <input type="number" name="tagDesMonats" min="1" max="31">. des Monats um <input type="time" name="Zeit"> <br>
-            <input id="Input" type="radio" name="Ausführung" value="Benutzerdefiniert" required> Benutzerdefiniert
+                </select> Minute(s) <br>
+            <input id="Input" type="radio" name="Ausführung" value="Jeden Tag um 'Zahl':'Zahl'" required> Daily at <input type="time" name="Zeit"> <br>
+            <input id="Input" type="radio" name="Ausführung" value="Immer am 'Stelle/Zahl' des Monats um 'Zahl':'Zahl'" required> Every <input type="number" name="tagDesMonats" min="1" max="31">. of the month at <input type="time" name="Zeit"> <br>
+            <input id="Input" type="radio" name="Ausführung" value="Benutzerdefiniert" required> Custom
         </div>
 
         <div id="alignCenter" class="Boxing">
-        <p class="Untertitel">Benachrichtigungen</p>
-            <p>Mich per E-Mail benachrichtigen bei</p>
-            <input id="Input" type="checkbox" name="Benachrichtigungen_F"> Fehlschlag des Jobs <br>
-            <input id="Input" type="checkbox" name="Benachrichtigungen_E"> erfolgreichen Abruf nach vorherigem Fehlschlag <br>
-            <input id="Input" type="checkbox" name="Benachrichtigungen_D"> automatischer Deaktivierung wegen zu vieler Fehlschläge
+        <p class="Untertitel">Notification</p>
+            <p> Notify me by E-Mail after </p>
+            <input id="Input" type="checkbox" name="Benachrichtigungen_F"> the job fails. <br>
+            <input id="Input" type="checkbox" name="Benachrichtigungen_E"> an successful recall after the previous failure. <br>
+            <input id="Input" type="checkbox" name="Benachrichtigungen_D"> automatic deactivation due to too many failures.
         </div>
 
         <div id="alignCenter" class="Boxing">
-        <p class="Untertitel">Allgemein</p>
-            <input id="Input" type="checkbox" name="Antworten_speichern"> Antworten speichern
+        <p class="Untertitel">General</p>
+            <input id="Input" type="checkbox" name="Antworten_speichern"> Remember the answers
         </div>
 
         <br>
 
-        <input type="submit" value="Erstellen" class="Submit" id="Submit">
+        <input type="submit" value="Create" class="Submit" id="Submit">
 
     </form>
 
