@@ -7,89 +7,132 @@
     <script src="{% static "MyApp/base.js" %}"></script>
     <title>WebCron</title>
 </head>
-<body>
+<body id="Body">
 
-<!-- Titel -->
+{% if user.is_authenticated %}
 
-<h1 class="überTitel">Cron-Job erstellen</h1>
-
-<!-- Hamburger Menu -->
+        <!-- Hamburger Menu -->
 
 	<div id="HM">
 	<nav>
 		<div id="menuToggle">
-			<input type="checkbox" />
-				<span></span>
-				<span></span>
-				<span></span>
+			<input class="hmInput" type="checkbox" />
+				<span class="hmIcon"></span>
+				<span class="hmIcon"></span>
+				<span class="hmIcon"></span>
 			<ul id="menu">
-                <button>Hey</button>
-                <li><a href="">Über mich</a></li>
-                <li><a href="">Meine Sporthobbys</a></li>
+                <li><a href="/">Homepage</a></li>
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+                <!-- Night Mode Switch -->
+                <label class="nightMode">
+                    <input type="checkbox" id="Night" onclick="nightMode()">
+                    <span class="slider round"></span>
+                    <img src="https://img.icons8.com/cotton/2x/sun--v2.png" alt="Sun" id="Sun">
+                </label>
 			</ul>
 		</div>
 	</nav>
 	</div>
 
-<!-- Boxen -->
+    <!-- Titel -->
 
-<form action="{% url 'submit' %}" method="post">
-    {% csrf_token %}
-    <div class="Boxing">
-    <p class="Untertitel">Titel, Adresse</p>
-        Titel: <input type="text" name="Titel" class="Titel" required> <br>
-        Adresse: <input type="url" name="Adresse" value="https://" class="Adresse" required>
-    </div>
+    <div class="align">
 
-    <div class="Boxing">
-        <p class="UIconP"><input type="checkbox" name="UIcon" class="UIcon" id="myCheck" onclick="myFunction()"> Erfordert HTTP-Authentifizierung </p>
-        <div id="text" style="display:none">
-            <ul class="ulParagraph">
-              <li>
-                <div class="lineParagraph">
-                    <p>Benutzername:</p>
-                    <p>Passwort:</p>
-                </div>
-              </li>
-            </ul>
-            <input type="text" name="Benutzername" class="benutzerName" id="Benutzername">
-            <input type="password" name="Passwort" class="passWort" id="Passwort">
+    Hi {{ user.username }}!
+
+    <h1 class="überTitel">Cron-Job erstellen</h1>
+
+    <!-- Boxen -->
+
+    <form action="{% url 'submit' %}" method="post">
+        {% csrf_token %}
+        <div id="alignCenter" class="Boxing">
+        <p class="Untertitel">Titel, Adresse</p>
+            Titel: <input type="text" name="Titel" class="Titel" required> <br>
+            Adresse: <input type="url" name="Adresse" value="https://" class="Adresse" required>
         </div>
+
+        <div id="alignCenter" class="Boxing">
+            <p class="UIconP"><input type="checkbox" name="UIcon" class="UIcon" id="myCheck" onclick="myFunction()"> Erfordert HTTP-Authentifizierung </p>
+            <div id="text" style="display:none">
+                <ul class="ulParagraph">
+                  <li>
+                    <div class="lineParagraph">
+                        <p>Benutzername:</p>
+                        <p>Passwort:</p>
+                    </div>
+                  </li>
+                </ul>
+                <input type="text" name="Benutzername" class="benutzerName" id="Benutzername">
+                <input type="password" name="Passwort" class="passWort" id="Passwort">
+            </div>
+        </div>
+
+        <div id="alignCenter" class="Boxing">
+        <p class="Untertitel">Ausführung</p>
+            <input class="Input" type="radio" name="Ausführung" value="Alle 'Zahl' Minute(n)" required> Alle <select>
+                    <option value="-">-</option>
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="30">30</option>
+                    <option value="60">60</option>
+                </select> Minute(n) <br>
+            <input id="Input" type="radio" name="Ausführung" value="Jeden Tag um 'Zahl':'Zahl'" required> Jeden Tag um <input type="time" name="Zeit"> <br>
+            <input id="Input" type="radio" name="Ausführung" value="Immer am 'Stelle/Zahl' des Monats um 'Zahl':'Zahl'" required> Immer am <input type="number" name="tagDesMonats" min="1" max="31">. des Monats um <input type="time" name="Zeit"> <br>
+            <input id="Input" type="radio" name="Ausführung" value="Benutzerdefiniert" required> Benutzerdefiniert
+        </div>
+
+        <div id="alignCenter" class="Boxing">
+        <p class="Untertitel">Benachrichtigungen</p>
+            <p>Mich per E-Mail benachrichtigen bei</p>
+            <input id="Input" type="checkbox" name="Benachrichtigungen_F"> Fehlschlag des Jobs <br>
+            <input id="Input" type="checkbox" name="Benachrichtigungen_E"> erfolgreichen Abruf nach vorherigem Fehlschlag <br>
+            <input id="Input" type="checkbox" name="Benachrichtigungen_D"> automatischer Deaktivierung wegen zu vieler Fehlschläge
+        </div>
+
+        <div id="alignCenter" class="Boxing">
+        <p class="Untertitel">Allgemein</p>
+            <input id="Input" type="checkbox" name="Antworten_speichern"> Antworten speichern
+        </div>
+
+        <br>
+
+        <input type="submit" value="Erstellen" class="Submit" id="Submit">
+
+    </form>
+
     </div>
 
-    <div class="Boxing">
-    <p class="Untertitel">Ausführung</p>
-        <input type="radio" name="Ausführung" value="Alle 'Zahl' Minute(n)" required> Alle <select>
-                <option value="-">-</option>
-                <option value="5">5</option>
-                <option value="10">10</option>
-                <option value="15">15</option>
-                <option value="30">30</option>
-                <option value="60">60</option>
-            </select> Minute(n) <br>
-        <input type="radio" name="Ausführung" value="Jeden Tag um 'Zahl':'Zahl'" required> Jeden Tag um <input type="time" name="Zeit"> <br>
-        <input type="radio" name="Ausführung" value="Immer am 'Stelle/Zahl' des Monats um 'Zahl':'Zahl'" required> Immer am <input type="number" name="tagDesMonats" min="1" max="31">. des Monats um <input type="time" name="Zeit"> <br>
-        <input type="radio" name="Ausführung" value="Benutzerdefiniert" required> Benutzerdefiniert
-    </div>
+{% else %}
 
-    <div class="Boxing">
-    <p class="Untertitel">Benachrichtigungen</p>
-        <p>Mich per E-Mail benachrichtigen bei</p>
-        <input type="checkbox" name="Benachrichtigungen_F"> Fehlschlag des Jobs <br>
-        <input type="checkbox" name="Benachrichtigungen_E"> erfolgreichen Abruf nach vorherigem Fehlschlag <br>
-        <input type="checkbox" name="Benachrichtigungen_D"> automatischer Deaktivierung wegen zu vieler Fehlschläge
-    </div>
+    <!-- Hamburger Menu -->
 
-    <div class="Boxing">
-    <p class="Untertitel">Allgemein</p>
-        <input type="checkbox" name="Antworten_speichern"> Antworten speichern
-    </div>
+	<div id="HM2">
+	<nav>
+		<div id="menuToggle2">
+			<input class="hmInput2" type="checkbox" />
+				<span class="hmIcon2"></span>
+				<span class="hmIcon2"></span>
+				<span class="hmIcon2"></span>
+			<ul id="menu2">
+                <li><a href="/">Homepage</a></li>
+                <li><a href="{% url 'login' %}">Login</a></li>
+                <li><a href="{% url 'signup' %}">Register</a></li>
+                <!-- Night Mode Switch -->
+                <label class="nightMode">
+                    <input type="checkbox" id="Night" onclick="nightMode()">
+                    <span class="slider round"></span>
+                    <img src="https://img.icons8.com/cotton/2x/sun--v2.png" alt="Sun" id="Sun">
+                </label>
+			</ul>
+		</div>
+	</nav>
+	</div>
 
-    <br>
+    <h1>You are not logged in</h1>
 
-    <input type="submit" value="Erstellen" class="Submit">
-
-</form>
+{% endif %}
 
 </body>
 </html>

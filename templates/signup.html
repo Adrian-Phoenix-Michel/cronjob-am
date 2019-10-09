@@ -5,9 +5,9 @@
     {% load static %}
     <link rel="stylesheet" href="{% static "MyApp/style.css" %}">
     <script src="{% static "MyApp/base.js" %}"></script>
-    <title>Login</title>
+    <title>Sign Up</title>
 </head>
-<body id="Body" class="loginBody">
+<body id="Body" class="signupBody">
 
 <!-- Hamburger Menu -->
 
@@ -20,8 +20,8 @@
 				<span class="hmIcon"></span>
 			<ul id="menu">
                 <li><a href="/">Homepage</a></li>
-                <li><a href="">Login</a></li>
-                <li><a href="{% url 'signup' %}">Register</a></li>
+                <li><a href="{% url 'login' %}">Login</a></li>
+                <li><a href="">Register</a></li>
                 <!-- Night Mode Switch -->
                 <label class="nightMode">
                     <input type="checkbox" id="Night" onclick="nightMode()">
@@ -34,11 +34,11 @@
 	</div>
 
 
-    <h2 class="überTitelLogin">Login</h2>
-    <form method="post" class="Boxing" id="loginBox">
+    <h2 class="überTitelLogin">Sign up</h2>
+    <form method="post" class="Boxing" id="signupBox">
         {% csrf_token %}
         {{ form.as_p }}
-        <button class="loginButton" type="submit">Login</button>
+        <button class="loginButton" type="submit">Sign up</button>
     </form>
 </body>
 </html>

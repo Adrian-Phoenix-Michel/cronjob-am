@@ -16,3 +16,23 @@ function myFunction() {
       text.style.display = "none";
   }
 }
+
+function nightMode() {
+    var night = document.getElementById("Night");
+    var body = document.getElementById("Body");
+    var submit = document.getElementById("Submit");
+    var input = document.getElementById( "Input");
+
+    var image = document.getElementById('Sun');
+
+    if (night.checked === true){
+        body.style.backgroundColor = "grey";
+        image.src="https://img.icons8.com/cotton/2x/moon-satellite.png";
+    }
+    else {
+        body.style.backgroundColor = "white";
+        image.src="https://img.icons8.com/cotton/2x/sun--v2.png";
+    }
+
+
+}
