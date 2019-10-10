@@ -24,4 +24,5 @@ urlpatterns = [
     path('submit/', views.submit, name="submit"),
     path('accounts/', include('accounts.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('myjobs/', include('templates.myjobs'), name="myjobs")
 ]

@@ -1,3 +1,5 @@
+<!-- class="passButton" -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,6 +24,8 @@
 				<span class="hmIcon"></span>
 			<ul id="menu">
                 <li><a href="/">Homepage</a></li>
+                <li><a href="/myjobs"></a></li>
+                <li><a href="{% url 'password_reset' %}">Change Password</a></li>
                 <li><a href="{% url 'logout' %}">Logout</a></li>
                 <!-- Night Mode Switch -->
                 <label class="nightMode">
@@ -40,7 +44,6 @@
 
     Welcome {{ user.username }}!
     <br>
-    <p><a href="{% url 'password_reset' %}">change password</a></p>
 
     <h1 class="überTitel">Create a Cron-Job</h1>
 
@@ -72,17 +75,17 @@
 
         <div id="alignCenter" class="Boxing">
         <p class="Untertitel">Execution</p>
-            <input class="Input" type="radio" name="Ausführung" value="Alle 'Zahl' Minute(n)" required> Every <select>
-                    <option value="-">-</option>
+            <input class="Input" type="radio" name="Ausführung" value="Every 'number' Minute(s)" required> Every <select name="Minuten">
+                    <option value="1">1</option>
                     <option value="5">5</option>
                     <option value="10">10</option>
                     <option value="15">15</option>
                     <option value="30">30</option>
                     <option value="60">60</option>
                 </select> Minute(s) <br>
-            <input id="Input" type="radio" name="Ausführung" value="Jeden Tag um 'Zahl':'Zahl'" required> Daily at <input type="time" name="Zeit"> <br>
-            <input id="Input" type="radio" name="Ausführung" value="Immer am 'Stelle/Zahl' des Monats um 'Zahl':'Zahl'" required> Every <input type="number" name="tagDesMonats" min="1" max="31">. of the month at <input type="time" name="Zeit"> <br>
-            <input id="Input" type="radio" name="Ausführung" value="Benutzerdefiniert" required> Custom
+            <input id="Input" type="radio" name="Ausführung" value="Daily at 'number':'number'" required> Daily at <input type="time" name="Zeit"> <br>
+            <input id="Input" type="radio" name="Ausführung" value="Every 'position/number'. of the month at 'number':'number'" required> Every <input type="number" name="tagDesMonats" min="1" max="31">. of the month at <input type="time" name="Zeit"> <br>
+            <input id="Input" type="radio" name="Ausführung" value="Custom" required> Custom
         </div>
 
         <div id="alignCenter" class="Boxing">

@@ -10,7 +10,7 @@ def index(request):
 
 
 def submit(request):
-    if (request.POST):
+    if request.POST:
         data = request.POST.dict()
         titel = data.get("Titel")
         adresse = data.get("Adresse")
@@ -22,6 +22,40 @@ def submit(request):
         benachrichtigung_erfolgnachfehl = data.get("Benachrichtigungen_E")
         benachrichtigung_deaktivierung = data.get("Benachrichtigungen_D")
         antwort_speichern = data.get("Antworten_speichern")
+
+        if ausführung == "0":
+            minute = data.get("Minute")
+        elif ausführung == "1":
+            ""
+        elif ausführung == "2":
+            ""
+        elif ausführung == "3":
+            ""
+
+        if authentifizierung_checked == "on":
+            authentifizierung_checked = True
+        else:
+            authentifizierung_checked = False
+
+        if benachrichtigung_fehlschlag == "on":
+            benachrichtigung_fehlschlag = True
+        else:
+            benachrichtigung_fehlschlag = False
+
+        if benachrichtigung_erfolgnachfehl == "on":
+            benachrichtigung_erfolgnachfehl = True
+        else:
+            benachrichtigung_erfolgnachfehl = False
+
+        if benachrichtigung_deaktivierung == "on":
+            benachrichtigung_deaktivierung = True
+        else:
+            benachrichtigung_deaktivierung = False
+
+        if antwort_speichern == "on":
+            antwort_speichern = True
+        else:
+            antwort_speichern = False
 
         new_entry = cronjob(titel=titel, adresse=adresse, authentifizierung_checked=authentifizierung_checked,
                             benutzername=benutzername, passwort=passwort,

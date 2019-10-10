@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="stylesheet" href="{% static "MyApp/style.css" %}">
+    <script src="{% static "MyApp/base.js" %}"></script>
+    <title>My Cron-Jobs</title>
+</head>
+<body id="Body">
+
+{% if user.is_authenticated %}
+
+        <!-- Hamburger Menu -->
+
+	<div id="HM">
+	<nav>
+		<div id="menuToggle">
+			<input class="hmInput" type="checkbox" />
+				<span class="hmIcon"></span>
+				<span class="hmIcon"></span>
+				<span class="hmIcon"></span>
+			<ul id="menu">
+                <li><a href="/">Homepage</a></li>
+                <li><a href="{% url 'password_reset' %}">Change Password</a></li>
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+                <!-- Night Mode Switch -->
+                <label class="nightMode">
+                    <input type="checkbox" id="Night" onclick="nightMode()">
+                    <span class="slider round"></span>
+                    <img src="https://img.icons8.com/cotton/2x/sun--v2.png" alt="Sun" id="Sun">
+                </label>
+			</ul>
+		</div>
+	</nav>
+	</div>
+
+    <!-- Titel -->
+
+    <div class="align">
+
+    Logged in as: {{ user.username }}
+    <br>
+
+    <h1 class="überTitel">My Cron-Jobs</h1>
+
+    <!-- Boxen -->
+
+
+
+    </div>
+
+{% else %}
+
+    <!-- Hamburger Menu -->
+
+	<div id="HM2">
+	<nav>
+		<div id="menuToggle2">
+			<input class="hmInput2" type="checkbox" />
+				<span class="hmIcon2"></span>
+				<span class="hmIcon2"></span>
+				<span class="hmIcon2"></span>
+			<ul id="menu2">
+                <li><a href="/">Homepage</a></li>
+                <li><a href="{% url 'login' %}">Login</a></li>
+                <li><a href="{% url 'signup' %}">Register</a></li>
+                <!-- Night Mode Switch -->
+                <label class="nightMode">
+                    <input type="checkbox" id="Night" onclick="nightMode()">
+                    <span class="slider round"></span>
+                    <img src="https://img.icons8.com/cotton/2x/sun--v2.png" alt="Sun" id="Sun">
+                </label>
+			</ul>
+		</div>
+	</nav>
+	</div>
+
+    <h1>You are not logged in</h1>
+
+{% endif %}
+
+</body>
+</html>
