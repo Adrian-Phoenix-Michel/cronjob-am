@@ -17,6 +17,8 @@ function myFunction() {
   }
 }
 
+
+
 function nightMode() {
     var night = document.getElementById("Night");
     var body = document.getElementById("Body");
@@ -24,6 +26,8 @@ function nightMode() {
     var input = document.getElementById( "Input");
 
     var image = document.getElementById('Sun');
+
+
 
     if (night.checked === true){
         body.style.backgroundColor = "grey";

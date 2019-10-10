@@ -352,6 +352,10 @@ body, html {
     flex-flow: column;
 }
 
+#HM2homepage {
+    margin-top: -100px;
+}
+
 .Homepage {
     top: 50px;
     display: flex;
