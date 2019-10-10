@@ -1,0 +1,146 @@
+<!-- class="passButton" -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="stylesheet" href="{% static "MyApp/style.css" %}">
+    <script src="{% static "MyApp/base.js" %}"></script>
+    <title>Create a Cron-Job</title>
+</head>
+<body id="Body">
+
+{% if user.is_authenticated %}
+
+        <!-- Hamburger Menu -->
+
+    <div id="HM">
+	<nav>
+		<div id="menuToggle">
+			<input class="hmInput" type="checkbox" />
+				<span class="hmIcon"></span>
+				<span class="hmIcon"></span>
+				<span class="hmIcon"></span>
+			<ul id="menu">
+                <li><a href="/">Homepage</a></li>
+                <li><a href="{% url 'myjobs' %}">My Cron-Jobs</a></li>
+                <li><a href="{% url 'password_reset' %}">Change Password</a></li>
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+                <!-- Night Mode Switch -->
+                <label class="nightMode">
+                    <input type="checkbox" id="Night" onclick="nightMode()">
+                    <span class="slider round"></span>
+                    <img src="https://img.icons8.com/cotton/2x/sun--v2.png" alt="Sun" id="Sun">
+                </label>
+			</ul>
+		</div>
+	</nav>
+	</div>
+
+    <!-- Titel -->
+
+    <div class="align">
+
+    Logged in as: {{ user.username }}
+    <br>
+
+    <h1 class="überTitel">Create a Cron-Job</h1>
+
+    <!-- Boxen -->
+
+    <form action="{% url 'submit' %}" method="post">
+        {% csrf_token %}
+        <div id="alignCenter" class="Boxing">
+        <p class="Untertitel">Title, Web-Address</p>
+            Title: <input type="text" name="Titel" class="Titel" required> <br>
+            Web-Address: <input type="url" name="Adresse" value="https://" class="Adresse" required>
+        </div>
+
+        <div id="alignCenter" class="Boxing">
+            <p class="UIconP"><input type="checkbox" name="UIcon" class="UIcon" id="myCheck" onclick="myFunction()"> Requires HTTPS-Authentication </p>
+            <div id="text" style="display:none">
+                <ul class="ulParagraph">
+                  <li>
+                    <div class="lineParagraph">
+                        <p>Username:</p>
+                        <p>Password:</p>
+                    </div>
+                  </li>
+                </ul>
+                <input type="text" name="Benutzername" class="benutzerName" id="Benutzername">
+                <input type="password" name="Passwort" class="passWort" id="Passwort">
+            </div>
+        </div>
+
+        <div id="alignCenter" class="Boxing">
+        <p class="Untertitel">Execution</p>
+            <input class="Input" type="radio" name="Ausführung" value="Every 'number' Minute(s)" required> Every <select name="Minuten">
+                    <option value="1">1</option>
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="30">30</option>
+                    <option value="60">60</option>
+                </select> Minute(s) <br>
+            <input id="Input" type="radio" name="Ausführung" value="Daily at 'number':'number'" required> Daily at <input type="time" name="Zeit"> <br>
+            <input id="Input" type="radio" name="Ausführung" value="Every 'position/number'. of the month at 'number':'number'" required> Every <input type="number" name="tagDesMonats" min="1" max="31">. of the month at <input type="time" name="Zeit"> <br>
+            <input id="Input" type="radio" name="Ausführung" value="Custom" required> Custom
+        </div>
+
+        <div id="alignCenter" class="Boxing">
+        <p class="Untertitel">Notification</p>
+            <p> Notify me by E-Mail after </p>
+            <input id="Input" type="checkbox" name="Benachrichtigungen_F"> the job fails. <br>
+            <input id="Input" type="checkbox" name="Benachrichtigungen_E"> an successful recall after the previous failure. <br>
+            <input id="Input" type="checkbox" name="Benachrichtigungen_D"> automatic deactivation due to too many failures.
+        </div>
+
+        <div id="alignCenter" class="Boxing">
+        <p class="Untertitel">General</p>
+            <input id="Input" type="checkbox" name="Antworten_speichern"> Remember the answers
+        </div>
+
+        <br>
+
+        <input type="submit" value="Create" class="Submit" id="Submit">
+
+    </form>
+
+    </div>
+
+{% else %}
+
+    <!-- Hamburger Menu -->
+
+    <div id="HM2">
+	<nav>
+		<div id="menuToggle2">
+			<input class="hmInput2" type="checkbox" />
+				<span class="hmIcon2"></span>
+				<span class="hmIcon2"></span>
+				<span class="hmIcon2"></span>
+			<ul id="menu2">
+                <li><a href="/">Homepage</a></li>
+                <li><a href="{% url 'login' %}">Login</a></li>
+                <li><a href="{% url 'signup' %}">Register</a></li>
+                <!-- Night Mode Switch -->
+                <label class="nightMode">
+                    <input type="checkbox" id="Night" onclick="nightMode()">
+                    <span class="slider round"></span>
+                    <img src="https://img.icons8.com/cotton/2x/sun--v2.png" alt="Sun" id="Sun">
+                </label>
+			</ul>
+		</div>
+	</nav>
+    </div>
+
+
+    <h1>You are not logged in</h1>
+    <p>Open menu above for login.</p>
+
+
+{% endif %}
+
+</body>
+</html>

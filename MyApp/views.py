@@ -1,6 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponseRedirect
+from django.urls import reverse
+
 from . import models
 from .models import cronjob
+from django.contrib.auth.models import User
 
 
 # Create your views here.
@@ -57,6 +60,7 @@ def submit(request):
         else:
             antwort_speichern = False
 
+
         new_entry = cronjob(titel=titel, adresse=adresse, authentifizierung_checked=authentifizierung_checked,
                             benutzername=benutzername, passwort=passwort,
                             benachrichtigung_fehlschlag=benachrichtigung_fehlschlag,
@@ -66,6 +70,20 @@ def submit(request):
 
         cronjob.save(new_entry)
 
+
+        User.dark_mode
+
+
         return render(request, "index.html")
     else:
         return render(request, "index.html")
+
+
+def myjobs(request):
+    return render(request, "myjobs.html")
+
+def createjobs(request):
+    return render(request, "createjobs.html")
+
+def darkmode(request):
+    print("urf")

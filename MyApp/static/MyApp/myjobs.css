@@ -1,0 +1,589 @@
+
+/* -------------Homepage--------------- */
+
+
+/* Hamburger Menu */
+
+#menu a {
+  text-decoration: none;
+  color: #232323;
+
+  transition: color 0.3s ease;
+}
+
+#menu a:hover
+{
+  color: tomato;
+}
+
+#menuToggle
+{
+  display: block;
+  position: relative;
+  top: -50px;
+  left: 0;
+    margin-bottom: 0;
+
+  z-index: 1;
+
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.hmInput
+{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+
+  cursor: pointer;
+
+  opacity: 0;
+  z-index: 2;
+
+  -webkit-touch-callout: none;
+}
+
+#menuToggle .hmIcon
+{
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+
+    background: #232323;
+    border-radius: 3px;
+
+    z-index: 1;
+
+    transform-origin: 4px 0px;
+
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle .hmIcon:first-child
+{
+    transform-origin: 0% 0%;
+}
+
+#menuToggle .hmIcon:nth-last-child(2)
+{
+    transform-origin: 0% 100%;
+}
+
+#menuToggle .hmInput:checked ~ .hmIcon
+{
+    opacity: 1;
+    transform: rotate(45deg) translate(-2px, -1px);
+    background: #232323;
+}
+
+#menuToggle .hmInput:checked ~ .hmIcon:nth-last-child(3)
+{
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#menuToggle .hmInput:checked ~ .hmIcon:nth-last-child(2)
+{
+    transform: rotate(-45deg) translate(0, -1px);
+}
+
+#HM2 {
+    margin-top: -700px;
+}
+
+#menu
+{
+    position: absolute;
+    width: 300px;
+    margin: -100px 0 0 -558%;
+    padding: 50px;
+    padding-top: 125px;
+    right: 0;
+    left: 0;
+
+  background: #b8b8b8;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+
+  transform-origin: 0% 0%;
+  transform: translate(0, -100%);
+
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+
+}
+
+#menu li
+{
+    padding: 10px 0;
+    font-size: 22px;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+}
+
+#menuToggle .hmInput:checked ~ ul
+{
+    transform: none;
+}
+
+/* Hamburger Menu 2 */
+
+#menu2 a {
+  text-decoration: none;
+  color: #232323;
+
+  transition: color 0.3s ease;
+}
+
+#menu2 a:hover
+{
+  color: tomato;
+}
+
+#menuToggle2
+{
+  display: block;
+  position: relative;
+  top: -50px;
+  left: 0;
+    margin-bottom: -150px;
+
+  z-index: 1;
+
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.hmInput2
+{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+
+  cursor: pointer;
+
+  opacity: 0;
+  z-index: 2;
+
+  -webkit-touch-callout: none;
+}
+
+#menuToggle2 .hmIcon2
+{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+
+  background: #232323;
+  border-radius: 3px;
+
+  z-index: 1;
+
+  transform-origin: 4px 0px;
+
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle2 .hmIcon2:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle2 .hmIcon2:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+#menuToggle2 .hmInput2:checked ~ .hmIcon2
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+
+#menuToggle2 .hmInput2:checked ~ .hmIcon2:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#menuToggle2 .hmInput2:checked ~ .hmIcon2:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+#menu2
+{
+  position: absolute;
+  width: 300px;
+  margin: -100px 0 0 -558%;
+  padding: 50px;
+  padding-top: 125px;
+    right: 0;
+    left: 0;
+
+  background: #b8b8b8;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+
+  transform-origin: 0% 0%;
+  transform: translate(0, -100%);
+
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+
+}
+
+#menu2 li
+{
+  padding: 10px 0;
+  font-size: 22px;
+    margin: 0 auto;
+     width: 100%;
+     text-align: center;
+}
+
+#menuToggle2 .hmInput2:checked ~ ul
+{
+  transform: none;
+}
+
+/* Night Mode Switch */
+
+        /* The switch - the box around the slider */
+.nightMode {
+    top: 39px;
+    left: 25%;
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin-bottom: 40px;
+}
+
+        /* Hide default HTML checkbox */
+.nightMode input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+        /* The slider */
+.nightMode .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.nightMode .slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.nightMode input:checked + .slider {
+  background-color: #2196F3;
+}
+
+.nightMode input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+.nightMode input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+        /* Rounded sliders */
+.nightMode .slider.round {
+  border-radius: 34px;
+}
+
+.nightMode .slider.round:before {
+  border-radius: 50%;
+}
+
+/* Night Mode Icon */
+
+#Sun {
+    max-height: 50px;
+    max-width: 50px;
+    padding-left: 80px;
+    margin-top: -30px;
+}
+
+/* Body & Titel */
+
+body, html {
+    font-family: Arial, serif;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+}
+
+/*
+a.passButton {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    border: black 1px solid;
+    border-radius: 10px;
+    padding: 2px 5px;
+
+    text-decoration: none;
+    color: initial;
+}
+*/
+
+.loginBody {
+    top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    margin-bottom: 450px;
+}
+
+.signupBody {
+    top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    margin-bottom: 360px;
+}
+
+.logoutBody {
+}
+
+.jobsBody {
+    top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    margin-bottom: 650px;
+}
+
+#alignCenter {
+    max-width: 450px;
+}
+
+.überTitel {
+
+}
+
+/* Boxen */
+
+input {
+    outline: none;
+    background-color: lightgray;
+    border-radius: 40px;
+    transition: all .1s ease-in-out;
+    padding-left: 10px;
+}
+
+input:hover {
+    background-color: #c4c4c4;
+}
+
+input:focus {
+    background-color: #fafafa;
+}
+
+input:active {
+    transform: scale(1.1,1.1);
+}
+
+select {
+    outline: none;
+    background-color: lightgray;
+    border-radius: 40px;
+    transition: all .1s ease-in-out;
+    padding-left: 10px;
+}
+
+select:hover {
+    background-color: #c4c4c4;
+}
+
+select:focus {
+    background-color: #fafafa;
+}
+
+select:active {
+    transform: scale(1.1,1.1);
+}
+
+.benutzerName {
+    border: black solid 1px;
+    border-radius: 40px;
+    transition: all .1s ease-in-out;
+}
+
+.benutzerName:active {
+    transform: scale(1.1,1.1);
+}
+
+.passWort {
+    border: black solid 1px;
+    border-radius: 40px;
+    transition: all .1s ease-in-out;
+}
+
+.passWort:active {
+    transform: scale(1.1,1.1);
+}
+
+.Titel {
+    border: black solid 1px;
+    margin-left: 78px;
+    border-radius: 40px;
+    transition: all .1s ease-in-out;
+}
+
+.Adresse {
+    border: black solid 1px;
+    margin-left: 11px;
+    margin-top: 5px;
+    border-radius: 40px;
+    transition: all .1s ease-in-out;
+}
+
+.Titel:active {
+    transform: scale(1.1,1.1);
+}
+
+.Adresse:active {
+    transform: scale(1.1,1.1);
+}
+
+.Titel:hover {
+    margin-left: 78px;
+    border-radius: 40px;
+}
+
+.Adresse:hover {
+    margin-left: 11px;
+    border-radius: 40px
+}
+
+.Titel:focus {
+    margin-left: 78px;
+    border-radius: 40px;
+}
+
+.Adresse:focus {
+    margin-left: 11px;
+    border-radius: 40px
+}
+
+.UIconP {
+    font-weight: bold;
+    margin-bottom: -2px;
+}
+
+.Untertitel {
+    font-weight: bold;
+}
+
+h1 {
+
+}
+
+.Checkboxing {
+    display: inline-block;
+}
+
+.Boxing {
+    border: 2px solid darkslategrey;
+    padding: 0 15px 15px 15px;
+    margin: 15px 5px;
+}
+
+#loginBox {
+    max-width: 300px;
+    padding: 30px 30px 30px 30px;
+    text-align: center;
+}
+
+.loginButton {
+    outline: none;
+    background-color: lightgrey;
+    margin-top: 15px;
+    border-radius: 40px;
+    transition: all .1s ease-in-out;
+}
+
+.loginButton:active {
+    transform: scale(1.1,1.1);
+}
+
+#signupBox {
+    max-width: 900px;
+    padding: 30px 30px 30px 30px;
+    text-align: center;
+}
+
+.ulParagraph {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.ulParagraph li p {
+    display: inline-block;
+    margin-right: 70px;
+    margin-bottom: 5px;
+}
+
+.Submit {
+    font-weight: bold;
+    margin-left: 12px;
+    transition: all .1s ease-in-out;
+}
+
+.Submit:active {
+    background-color: #6ab2b2;
+    transform: scale(1.1,1.1);
+}
+
+
+/* -------------Login--------------- */
+
+
+.überTitelLogin {
+}

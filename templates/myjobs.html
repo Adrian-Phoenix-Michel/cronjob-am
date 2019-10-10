@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     {% load static %}
-    <link rel="stylesheet" href="{% static "MyApp/style.css" %}">
+    <link rel="stylesheet" href="{% static "MyApp/myjobs.css" %}">
     <script src="{% static "MyApp/base.js" %}"></script>
     <title>My Cron-Jobs</title>
 </head>
-<body id="Body">
+<body id="Body" class="jobsBody">
 
 {% if user.is_authenticated %}
 
@@ -46,7 +46,7 @@
 
     <!-- Boxen -->
 
-
+    
 
     </div>
 
@@ -77,6 +77,7 @@
 	</div>
 
     <h1>You are not logged in</h1>
+    <p>Open menu above for login.</p>
 
 {% endif %}
 

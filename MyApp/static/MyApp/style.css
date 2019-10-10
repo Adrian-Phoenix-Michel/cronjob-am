@@ -352,20 +352,63 @@ body, html {
     flex-flow: column;
 }
 
-/*
+.Homepage {
+    top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    margin-bottom: 550px;
+}
+
+.align {
+    text-align: center;
+}
+
+.überTitelHomepage {
+}
+
+.buttonDiv {
+    justify-content: center;
+    display: flex;
+}
+
+p.passButtonCustom {
+    padding: 15px;
+}
+
 a.passButton {
     -webkit-appearance: button;
     -moz-appearance: button;
     appearance: button;
 
+    font-size: 25px;
+
     border: black 1px solid;
     border-radius: 10px;
     padding: 2px 5px;
+    background-color: lightgray;
 
     text-decoration: none;
     color: initial;
+
+    outline: none;
+    transition: all .1s ease-in-out;
 }
-*/
+
+.passButton:hover {
+    background-color: #e2e2e2;
+}
+
+.passButton:active {
+    transform: scale(1.1,1.1);
+    background-color: #e2e2e2;
+}
+
+.passButton:focus {
+    background-color: #e2e2e2;
+}
+
 
 .loginBody {
     top: 50px;
@@ -373,7 +416,7 @@ a.passButton {
     justify-content: center;
     align-items: center;
     flex-flow: column;
-    margin-bottom: 500px;
+    margin-bottom: 450px;
 }
 
 .signupBody {
@@ -382,10 +425,19 @@ a.passButton {
     justify-content: center;
     align-items: center;
     flex-flow: column;
-    margin-bottom: 360px;
+    margin-bottom: 320px;
 }
 
 .logoutBody {
+}
+
+.jobsBody {
+    top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    margin-bottom: 650px;
 }
 
 #alignCenter {

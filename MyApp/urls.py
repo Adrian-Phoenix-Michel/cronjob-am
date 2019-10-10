@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import path, include
 from MyApp import views
 
+app_name = "urf"
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name="index"),
@@ -25,6 +27,5 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('myjobs/', views.myjobs, name="myjobs"),
     path('createjobs/', views.createjobs, name="createjobs"),
-
-    path('', include('MyApp.urls')),
+    path('dark', views.darkmode, name="darkmode")
 ]
