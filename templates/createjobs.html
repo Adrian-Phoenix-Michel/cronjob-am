@@ -9,7 +9,7 @@
     <script src="{% static "MyApp/base.js" %}"></script>
     <title>Create a Cron-Job</title>
 </head>
-<body id="Body">
+<body id="Body" class="bodyCJ">
 
 {% if user.is_authenticated %}
 
@@ -40,7 +40,7 @@
 
     <!-- Titel -->
 
-    <div class="align">
+    <div class="alignCJ">
 
     Logged in as: {{ user.username }}
     <br>
@@ -87,7 +87,7 @@
             <input id="Input3" type="radio" name="Ausführung" value="Every 'position/number'. of the month at 'number':'number'" onclick="myCustom()" required> Every <input id="daySelect" type="number" name="tagDesMonats" min="1" max="31" onclick="myCustom()">. of the month at <input id="time2Select" type="time" name="Zeit" onclick="myCustom()"> <br>
             <input id="InputCustom" type="radio" name="Ausführung" value="Custom" onclick="myCustom()" required> Custom
             <br>
-            <textarea id="myTextArea" rows="5" cols="50">Your text here</textarea>
+            <textarea id="myTextArea" class="darkTextbox" rows="5" cols="50">Your text here</textarea>
         </div>
 
         <div id="alignCenter" class="Boxing">

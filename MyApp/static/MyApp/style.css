@@ -369,6 +369,11 @@ body, html {
     text-align: center;
 }
 
+.alignCJ {
+    margin-top: 20px;
+    text-align: center;
+}
+
 .überTitelHomepage {
 }
 
@@ -435,6 +440,15 @@ a.passButton {
 .logoutBody {
 }
 
+.bodyCJ {
+    top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    margin-top: 15px;
+}
+
 .jobsBody {
     top: 50px;
     display: flex;
@@ -492,6 +506,13 @@ select:focus {
 
 select:active {
     transform: scale(1.1,1.1);
+}
+
+.darkTextbox {
+    padding: 10px;
+    outline: none;
+    background-color: lightgrey;
+    border-radius: 20px;
 }
 
 #myTextArea {
@@ -606,6 +627,7 @@ h1 {
     max-width: 900px;
     padding: 30px 30px 30px 30px;
     text-align: center;
+    margin-bottom: 170px;
 }
 
 .ulParagraph {
