@@ -70,10 +70,6 @@ def submit(request):
 
         cronjob.save(new_entry)
 
-
-        User.dark_mode
-
-
         return render(request, "index.html")
     else:
         return render(request, "index.html")
@@ -84,6 +80,3 @@ def myjobs(request):
 
 def createjobs(request):
     return render(request, "createjobs.html")
-
-def darkmode(request):
-    print("urf")

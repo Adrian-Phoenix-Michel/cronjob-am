@@ -75,7 +75,7 @@
 
         <div id="alignCenter" class="Boxing">
         <p class="Untertitel">Execution</p>
-            <input class="Input" type="radio" name="Ausführung" value="Every 'number' Minute(s)" required> Every <select name="Minuten">
+            <input id="Input1" class="Input" type="radio" name="Ausführung" value="Every 'number' Minute(s)" onclick="myCustom()" required> Every <select id="minutenSelect" name="Minuten" onclick="myCustom()">
                     <option value="1">1</option>
                     <option value="5">5</option>
                     <option value="10">10</option>
@@ -83,9 +83,11 @@
                     <option value="30">30</option>
                     <option value="60">60</option>
                 </select> Minute(s) <br>
-            <input id="Input" type="radio" name="Ausführung" value="Daily at 'number':'number'" required> Daily at <input type="time" name="Zeit"> <br>
-            <input id="Input" type="radio" name="Ausführung" value="Every 'position/number'. of the month at 'number':'number'" required> Every <input type="number" name="tagDesMonats" min="1" max="31">. of the month at <input type="time" name="Zeit"> <br>
-            <input id="Input" type="radio" name="Ausführung" value="Custom" required> Custom
+            <input id="Input2" type="radio" name="Ausführung" value="Daily at 'number':'number'" onclick="myCustom()" required> Daily at <input id="timeSelect" type="time" name="Zeit" onclick="myCustom()"> <br>
+            <input id="Input3" type="radio" name="Ausführung" value="Every 'position/number'. of the month at 'number':'number'" onclick="myCustom()" required> Every <input id="daySelect" type="number" name="tagDesMonats" min="1" max="31" onclick="myCustom()">. of the month at <input id="time2Select" type="time" name="Zeit" onclick="myCustom()"> <br>
+            <input id="InputCustom" type="radio" name="Ausführung" value="Custom" onclick="myCustom()" required> Custom
+            <br>
+            <textarea id="myTextArea" rows="5" cols="50">Your text here</textarea>
         </div>
 
         <div id="alignCenter" class="Boxing">

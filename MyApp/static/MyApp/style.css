@@ -494,6 +494,10 @@ select:active {
     transform: scale(1.1,1.1);
 }
 
+#myTextArea {
+    display: none;
+}
+
 .benutzerName {
     border: black solid 1px;
     border-radius: 40px;

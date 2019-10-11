@@ -27,5 +27,4 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('myjobs/', views.myjobs, name="myjobs"),
     path('createjobs/', views.createjobs, name="createjobs"),
-    path('dark', views.darkmode, name="darkmode")
 ]
