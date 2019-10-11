@@ -53,8 +53,8 @@
         {% csrf_token %}
         <div id="alignCenter" class="Boxing">
         <p class="Untertitel">Title, Web-Address</p>
-            Title: <input type="text" name="Titel" class="Titel" required> <br>
-            Web-Address: <input type="url" name="Adresse" value="https://" class="Adresse" required>
+            Title: <input type="text" name="Titel" class="Titel" id="Title" required> <br>
+            Web-Address: <input type="url" name="Adresse" value="https://" class="Adresse" id="Address" required>
         </div>
 
         <div id="alignCenter" class="Boxing">
@@ -93,19 +93,20 @@
         <div id="alignCenter" class="Boxing">
         <p class="Untertitel">Notification</p>
             <p> Notify me by E-Mail after </p>
-            <input id="Input" type="checkbox" name="Benachrichtigungen_F"> the job fails. <br>
-            <input id="Input" type="checkbox" name="Benachrichtigungen_E"> an successful recall after the previous failure. <br>
-            <input id="Input" type="checkbox" name="Benachrichtigungen_D"> automatic deactivation due to too many failures.
+            <input id="InputBF" type="checkbox" name="Benachrichtigungen_F"> the job fails. <br>
+            <input id="InputBE" type="checkbox" name="Benachrichtigungen_E"> an successful recall after the previous failure. <br>
+            <input id="InputBD" type="checkbox" name="Benachrichtigungen_D"> automatic deactivation due to too many failures.
         </div>
 
         <div id="alignCenter" class="Boxing">
         <p class="Untertitel">General</p>
-            <input id="Input" type="checkbox" name="Antworten_speichern"> Remember the answers
+            <input id="InputAS" type="checkbox" name="Antworten_speichern"> Remember the answers
         </div>
 
         <br>
 
         <input type="submit" value="Create" class="Submit" id="Submit">
+        <input type="button" value="Reset" class="Submit" id="Reset" onclick="myReset()">
 
     </form>
 

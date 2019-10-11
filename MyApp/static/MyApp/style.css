@@ -647,6 +647,7 @@ h1 {
     font-weight: bold;
     margin-left: 12px;
     transition: all .1s ease-in-out;
+    padding: 2px 7px;
 }
 
 .Submit:active {
